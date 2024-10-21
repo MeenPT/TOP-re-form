@@ -1,0 +1,34 @@
+<section class="mx-auto" style="max-width: 550px; width: 90%;">
+  <h1 class="mb-4">New User</h1>
+  <%= form_with model: @user, class: "vstack gap-3" do |form| %>
+    <div>
+      <%= form.label :username, 'Your name', class: "form-label" %>
+      <%= form.text_field :username, class: "form-control" %>
+      <% if !@user.errors.full_messages_for(:username).empty? %>
+        <div><%= @user.errors.full_messages_for(:username).first %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :email, 'Email Address', class: "form-label"  %>
+      <%= form.email_field :email, class: "form-control" %>
+      <% if !@user.errors.full_messages_for(:email).empty? %>
+        <div><%= @user.errors.full_messages_for(:email).first %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :password, class: "form-label"  %>
+      <%= form.password_field :password, class: "form-control" %>
+      <% if !@user.errors.full_messages_for(:password).empty? %>
+        <div><%= @user.errors.full_messages_for(:password).first %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :password_confirmation, class: "form-label"  %>
+      <%= form.password_field  :password_confirmation, class: "form-control" %>
+      <% if !@user.errors.full_messages_for(:password_confirmation).empty? %>
+        <div><%= @user.errors.full_messages_for(:password_confirmation).first %></div>
+      <% end %>
+    </div>
+    <%= form.submit "Create", class: "btn btn-primary btn-lg" %>
+  <% end %>
+</section>
