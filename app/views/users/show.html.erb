@@ -1,0 +1,7 @@
+<main class="container py-5">
+  <h1><%= @user.username %></h1>
+  <h2 class="lead"><%= @user.email %></h2>
+  <div class="mt-4">
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-outline-primary btn-sm" %>
+  </div>
+</main>
